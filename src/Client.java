@@ -10,16 +10,9 @@ public class Client {
     }
 
     public static void main(String[] args) {
-        String host;
-
-        if (args.length < 1){
-            host = null;
-        }else{
-            host = args[0];
-        }
 
         try {
-            Registry registry = LocateRegistry.getRegistry(host);
+            Registry registry = LocateRegistry.getRegistry(args[0]);
             Server stub = (Server) registry.lookup("ServerInterface");
             Double response = stub.sum(2,3);
 
