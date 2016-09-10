@@ -11,13 +11,20 @@ public class Client {
 
     public static void main(String[] args) {
 
+		String host = (args.length < 1) ? null : args[0];
+
         try {
-            Registry registry = LocateRegistry.getRegistry(args[0]);
+	
+            Registry registry = LocateRegistry.getRegistry(host);
             Server stub = (Server) registry.lookup("ServerInterface");
             Double response = stub.sum(2,3);
 
             System.out.println("Sum: " + response);
+
         }catch (Exception e){
+			
+			System.err.println("Client exception: " + e.toString());
+			            e.printStackTrace();
 
         }
     }
