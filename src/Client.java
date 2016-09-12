@@ -16,7 +16,8 @@ public class Client {
         try {
 	
             Registry registry = LocateRegistry.getRegistry(host);
-            Server stub = (Server) registry.lookup("ServerInterface");
+            System.out.println(registry);
+            ServerInterface stub = (ServerInterface)registry.lookup("ServerInterface");
             Double response = stub.sum(2,3);
 
             System.out.println("Sum: " + response);
