@@ -16,11 +16,16 @@ public class Client {
         try {
 	
             Registry registry = LocateRegistry.getRegistry(host);
-            System.out.println(registry);
             ServerInterface stub = (ServerInterface)registry.lookup("ServerInterface");
             Double response = stub.sum(2,3);
+            Double response1 = stub.minus(2,3);
+            Double response2 = stub.times(2,3);
+            Double response3 = stub.divide(2,3);
 
             System.out.println("Sum: " + response);
+            System.out.println("Minus: " + response1);
+            System.out.println("Times: " + response2);
+            System.out.println("Divide: " + response3);
 
         }catch (Exception e){
 			

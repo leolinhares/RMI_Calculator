@@ -39,6 +39,7 @@ public class Server implements ServerInterface {
 
             //Binding
             Registry registry = LocateRegistry.getRegistry();
+            registry.unbind("ServerInterface");
             registry.bind("ServerInterface", stub);
 
             System.out.println("Server ready");
