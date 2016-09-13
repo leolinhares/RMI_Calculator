@@ -47,7 +47,7 @@ public class Client {
 
 			Scanner input_op = new Scanner(System.in);
 			
-			System.out.println("Enter option: ");  
+			System.out.println("Choose an operation: ");
 	        System.out.println("1. (+)");    
 	        System.out.println("2. (-)");    
 	        System.out.println("3. (x)");    
