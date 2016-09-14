@@ -22,7 +22,6 @@ public class Client {
 
 				double num1;
 				double num2;
-				//			int option = 5;
 
 				Scanner input_num = new Scanner(System.in);
 
@@ -32,6 +31,7 @@ public class Client {
 				System.out.println("");
 				System.out.println("Second number: ");
 				num2 = input_num.nextDouble();
+				System.out.println("");
 
 				Registry registry = LocateRegistry.getRegistry(host);
 				ServerInterface stub = (ServerInterface) registry.lookup("ServerInterface");
